@@ -1,0 +1,296 @@
+{
+  "info": {
+    "_postman_id": "d6fecd61-00ba-4cc4-a79b-438674108475",
+    "name": "My Collection",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "58462029",
+    "_collection_link": "https://go.postman.co/collection/58462029-d6fecd61-00ba-4cc4-a79b-438674108475?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Personnage 1.",
+      "item": [
+        {
+          "name": "Joueur",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test(\"Successful POST request\", function () {\n    pm.expect(pm.response.code).to.be.oneOf([200, 201]);\n});\n"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"name\": \"Add your name in the body\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/joueur?nom=Heros&pv=100&attaque=20",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "joueur"
+              ],
+              "query": [
+                {
+                  "key": "nom",
+                  "value": "Heros"
+                },
+                {
+                  "key": "pv",
+                  "value": "100"
+                },
+                {
+                  "key": "attaque",
+                  "value": "20"
+                }
+              ]
+            },
+            "description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+          },
+          "response": []
+        },
+        {
+          "name": "Monstre",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/monstre?nom=Monstre&pv=200&attaque=15",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "monstre"
+              ],
+              "query": [
+                {
+                  "key": "nom",
+                  "value": "Monstre"
+                },
+                {
+                  "key": "pv",
+                  "value": "200"
+                },
+                {
+                  "key": "attaque",
+                  "value": "15"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Combat 2.",
+      "item": [
+        {
+          "name": "attaque list",
+          "item": [
+            {
+              "name": "boule de feu",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/combat/attaquer?choix=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "combat",
+                    "attaquer"
+                  ],
+                  "query": [
+                    {
+                      "key": "choix",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "trou noir",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/combat/attaquer?choix=2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "combat",
+                    "attaquer"
+                  ],
+                  "query": [
+                    {
+                      "key": "choix",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "lance de glace",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/combat/attaquer?choix=3",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "combat",
+                    "attaquer"
+                  ],
+                  "query": [
+                    {
+                      "key": "choix",
+                      "value": "3"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "utiliser objet",
+          "item": [
+            {
+              "name": "Soin",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/combat/objet?choix=1",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "combat",
+                    "objet"
+                  ],
+                  "query": [
+                    {
+                      "key": "choix",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Att CRIT",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/api/combat/objet?choix=2",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "api",
+                    "combat",
+                    "objet"
+                  ],
+                  "query": [
+                    {
+                      "key": "choix",
+                      "value": "2"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "combat demarrer",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/combat/demarrer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "combat",
+                "demarrer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Combat Etat",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/combat/etat",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "combat",
+                "etat"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
